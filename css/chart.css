@@ -1,35 +1,144 @@
-/* pc画面での表示*/
-@media screen and (min-width:480px) {
-  .pc p{
-    text-align: center;
+:root{
+  --maingreen: #419e9d;
+  --mainred: #c74159;
+  --maingray: #c6cac7;
+  --mainnavy: #143265;
+  --subblue:#4088b1;
+  --subyellow:#ebd45d;
+  --subpink:#da7e82;
+}
+
+
+/* sp画面縦での表示*/
+@media screen and (max-width: 499px) {
+  body{
+    background-size:200% auto !important;
   }
   .sp{
+    width:100%;
+    height:100%;
+    position: relative;
+    background: rgba(255,255,255,0.5);
+  }
+  .sp p{
+    width: 80%;
+    margin-left: 10%;
+    position: relative;
+    text-align: center;
+    top:400px;
+    font-size: 15px;
+    padding: 10px;
+    background-color: #FFF;
+    color:var(--mainnavy);
+  }
+  .sp img{
+    position: absolute;
+    width: 60%;
+    margin-left: 20%;
+    top:150px;
+  }
+  .pc{
     display:none;
   }
 }
 
-@media screen and (max-width: 499px){
-  .pc{
+/* sp横、pc画面での表示 */
+@media screen and (min-width:480px){
+  .sp{
     display: none;
   }
 }
-
-
+html,main{
+  height: 100%;
+}
+body{
+  margin: 0 auto;
+  width:100%;
+  height:100%;
+  background-image: url("../image/背景.png");
+  background-size:100% auto;
+}
+.pc{
+  width:100%;
+  height:100%;
+}
+.box{
+  width: 90%;
+  height:70%;
+  margin:12% 5% 0% 5%;
+  background: rgba(255,255,255,0.93);
+  position: relative;
+}
+.box img{
+  width: 140px;
+  position: absolute;
+  top:-66px;
+  left:calc(45vw - 70px);
+}
+.question{
+  margin-top: 15%;
+  margin-left:35%;
+  width: 60%;
+  position: absolute;
+}
+.buttonArea{
+  position: absolute;
+  margin-top:calc(25% + 20px);
+  margin-left:40%;
+  width: 60%;
+}
 .button {
   display: inline-block;
   padding: 0.5em 1em;
   text-decoration: none;
-  background: #668ad8;/*ボタン色*/
-  color: #FFF;
-  border-bottom: solid 4px #627295;
-  border-radius: 3px;
+  background: #fff;/*ボタン色*/
+  color: #000;
+  border : solid 1px #000;
+  width: 30%;
+  text-align: center;
 }
-.button:active {
+.buttonYes:active {
   /*ボタンを押したとき*/
-  -webkit-transform: translateY(4px);
-  transform: translateY(4px);/*下に動く*/
-  border-bottom: none;/*線を消す*/
+  background-color: var(--subpink);
+}
+.buttonNo:active {
+  /*ボタンを押したとき*/
+  background-color: var(--subblue);
 }
 #result{
   display: none;
 }
+
+#text{
+  width: 80%;
+  margin-top: 5%;
+  margin-bottom:5%;
+  margin-left: 10%;
+  text-align: center;
+  position: relative;
+  /*animation-name: slideOut;*/
+  /*animation-name: slideIn;
+  animation-duration: 1s;
+  animation-timing-function: ease-in;*/
+  animation: none;
+  font-size: 20px;
+  letter-spacing: 5px;
+}
+
+/* 文字のスライドアニメーション
+@keyframes slideIn{
+  0%{
+    left: 100%;
+  }
+  100%{
+    left: 0%;
+  }
+}
+@keyframes slideOut{
+  0%{
+    left: 0%;
+  }
+  100%{
+    left:-100%;
+  }
+} */
