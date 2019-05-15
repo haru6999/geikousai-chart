@@ -13,6 +13,7 @@
 @media screen and (max-width: 499px) {
   body{
     background-size:200% auto !important;
+    height: 100% !important;
   }
   .sp{
     width:100%;
@@ -54,17 +55,57 @@ html,main{
 body{
   margin: 0 auto;
   width:100%;
-  height:100%;
+  height:70%;
   background-image: url("../image/背景.png");
   background-size:100% auto;
+  transition: all 1s;
 }
+/* もう一度診断するボタンが押された時に追加するクラス */
+.zoom {
+  animation: zoom 10s ease 0s 1 normal;
+}
+@keyframes zoom {
+  0% {}
+  50%{
+  width: 100vw;
+    top:-100px;
+    z-index: 999;
+  }
+  100% {
+    width: 125px;
+    top:10px;
+    z-index: 999;
+  }
+}
+
 .pc{
   width:100%;
   height:100%;
 }
+
+/* もう一度診断するボタン */
+.moreButton{
+  position: absolute;
+  width: 20%;
+  top:10%;
+  left:70%;
+}
+.more {
+  display: inline-block;
+  padding: 0.5em 0.5em;
+  text-decoration: none;
+  background: #fff;/*ボタン色*/
+  color: var(--subpink);
+  border : solid 0.5px #000;
+  width: 100%;
+  text-align: center;
+  font-size: 12px;
+}
+
+/* 半透明の中身 */
 .box{
   width: 90%;
-  height:70%;
+  height:100%;
   margin:12% 5% 0% 5%;
   background: rgba(255,255,255,0.93);
   position: relative;
@@ -74,6 +115,52 @@ body{
   position: absolute;
   top:-66px;
   left:calc(45vw - 70px);
+}
+#image{
+  width:125px;
+  position: absolute;
+  top:10px;
+  left:30px;
+  animation: rotate 2s ease 0s infinite normal;
+  -webkit-animation: rotate 2s ease 0s infinite normal;
+}
+@keyframes rotate {
+  49% {transform:rotateZ(0);}
+  50% {transform:rotateZ(-5deg)}
+  99% {transform:rotateZ(-5deg)}
+  100% {transform:rotateZ(0);}
+}
+
+@-webkit-keyframes rotate {
+  49% {transform:rotateZ(0);}
+  50% {transform:rotateZ(-5deg)}
+  99% {transform:rotateZ(-5deg)}
+  100% {transform:rotateZ(0);}
+}
+.serif{
+  width:35%;
+  height:100%;
+  position: absolute;
+}
+.serif img{
+  width:130px;
+  position: absolute;
+  top:20px;
+  left:40px;
+}
+#serif1{
+  width:40%;
+  top:6px;
+  left:120px;
+}
+#serif2{
+  width:40%;
+  top:6px;
+  left:120px;
+  display: none;
+}
+#serif3{
+  display: none;
 }
 .question{
   margin-top: 15%;

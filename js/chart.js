@@ -123,6 +123,10 @@ $('#no').click(function(){
   }
 });
 
-$("#result").click(function() {
-  window.location.href = 'bushocho/stage.html';
+$("#more").click(function() {
+  $("#image").addClass('zoom');
+  q=1;
+  text.html("芸工祭に興味がある");
+  return;
 });
+
