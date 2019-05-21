@@ -1,3 +1,5 @@
+jQuery(function($){
+
 var text = $(document.getElementById('text'));
 q = 1; //questionの略
 
@@ -130,3 +132,5 @@ $("#more").click(function() {
   return;
 });
 
+
+});
