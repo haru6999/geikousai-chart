@@ -11,31 +11,31 @@ $('#yes').click(function(){
   if(q==1){
     q = 2 ; //2ページへ
     text.html( "目立つことが好き？" );
-    // return;
+    return;
   }else if(q==2){
     q =4; //4へ
     text.html( "めちゃくちゃ目立ちたい？" );
-    // $('#result').show();
-    // return;
+    return;
   }else if(q==4){
-    window.location.href = './bushocho/stage.html';
-    // return;
+    popChange("hiru");
+    popIn();
+    return;
   }else if(q==7){
     q=6;
     text.html("運動することが好き？");
     return;
   }else if(q==6){
-    window.location.href = 'bushocho/undokai.html';
+    popChange("undokai");
     return;
   }else if(q==24){
     q=25;
     text.html("音楽が好きだ");
     return;
   }else if(q==25){
-    window.location.href = 'bushocho/pa.html';
+    popChange("pa");
     return;
   }else if(q==27){
-    window.location.href = 'bushocho/cafe.html';
+    popChange("cafe");
     return;
   }else if(q==16){
     q=8;
@@ -46,20 +46,20 @@ $('#yes').click(function(){
     text.html("犬派？");
     return;
   }else if(q==5){
-    window.location.href = 'bushocho/web.html';
+    popChange("web");
     return;
   }else if(q==11){
     q=12;
     text.html("締め切りには厳しい方だ");
     return;
   }else if(q==12){
-    window.location.href = 'bushocho/direction.html';
+    popChange("direction");
     return;
   }else if(q==18){
-    window.location.href = 'bushocho/interior.html';
+    popChange("interia");
     return;
   }else if(q==20){
-    window.location.href = 'bushocho/booth.html';
+    popChange("booth");
     return;
   }
   return;
@@ -69,7 +69,7 @@ $('#yes').click(function(){
 $('#no').click(function(){
   //次のページへ行く処理
   if(q==1){
-    window.location.href = 'bushocho/kanbu.html';
+    popChange("kanbu");
     return;
   }else if(q==2){
     q=16;
@@ -96,20 +96,20 @@ $('#no').click(function(){
     text.html("ニトリに行くのが好きだ");
     return;
   }else if(q==25){
-    window.location.href = 'bushocho/bar.html';
+    popChange("bar");
     return;
   }else if(q==5){
-    window.location.href = 'bushocho/graphic.html';
+    popChange("graphic");
     return;
   }else if(q==8){
     q=11;
     text.html("アナログ派？");
     return;
   }else if(q==11){
-    window.location.href = 'bushocho/eizo.html';
+    popChange("movie");
     return;
   }else if(q==12){
-    window.location.href = 'bushocho/workshop.html';
+    popChange("workshop");
     return;
   }else if(q==16){
     q=18;
@@ -120,7 +120,7 @@ $('#no').click(function(){
     text.html("腕相撲が強い");
     return;
   }else if(q==20){
-    window.location.href = 'bushocho/exterior.html';
+    popChange("exteria");
     return;
   }
 });
@@ -131,6 +131,61 @@ $("#more").click(function() {
   text.html("芸工祭に興味がある");
   return;
 });
+$("#more2").click(function() {
+  q=1;
+  text.html("芸工祭に興味がある");
+  $("#pop").css({
+    'animation':'popsOut 1s'
+  });
+  setTimeout(function(){
+    $('#pop').css({
+        'display':'none',
+        'animation': 'none'
+    });
+  },1000);
+});
 
+function popIn(){
+  $('#pop').css({
+    'display':'inline',
+    'animation':'popsIn 1s'
+  })
+  setTimeout(function(){
+    $('#pop').css({
+        'animation': 'none'
+    });
+  },1000);
+}
 
+function popChange(busho){
+  $("#bushomei").attr("src", "image/result/"+busho+"T.png");
+  $("#picture").attr("src", "image/result/"+busho+".png");
+  $('#popImg').css({
+    'display':'inline'
+  });
+  $("#kanbu").remove();
+  $("#picture2").remove();
+  if(busho=="hiru"){ //ステージ
+    console.log("bbb")
+    $('#popImg').css({
+      'display':'inline'
+    });
+    $("#kanbu").remove();
+    // ボマ追加
+    $('#picture').after('<img src="image/result/yoru.png" id="picture2">');
+    // return;
+  }
+  if(busho=="kanbu"){ //幹部
+    console.log("aaa")
+    $('#popImg').css({
+      'display':'none'
+    });
+    // 指定した要素の最初に、引数で指定した内容を追加。
+    $('#pop').prepend('<div id="kanbu"> <img src="image/result/kanbuT.png" id="kanbuT"><img src="image/result/kanbuP.png" id="kanbuP"></div>');
+    // return;
+  }
+  
+        
+  popIn();
+}
 });
