@@ -158,19 +158,10 @@ body{
   top:20px;
   left:40px;
 }
-#serif1{
+#serif{
   width:40%;
   top:6px;
   left:120px;
-}
-#serif2{
-  width:40%;
-  top:6px;
-  left:120px;
-  display: none;
-}
-#serif3{
-  display: none;
 }
 .question{
   margin-top: 15%;
