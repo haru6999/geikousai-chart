@@ -235,8 +235,8 @@ function animation(q){
     $("#serif").attr("src", "image/セリフ３.png");
     $("#image").attr("src", "image/ぱ２.png");
     $('#serif').css({
-      'width':'60%',
-      'top':'20px',
+      'width':'55%',
+      'top':'10px',
       'left':'45px'
     })
     $('#image').css({

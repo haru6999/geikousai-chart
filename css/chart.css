@@ -307,6 +307,12 @@ body{
   position: absolute;
   left:3vw;
   bottom:3vh;
+  box-shadow: 2px 2px var(--mainred);
+}
+.more2:active{
+  transform: translateX(2px);
+  transform: translateY(2px);
+  box-shadow:none;
 }
 @keyframes popsIn{
   0%{
@@ -322,5 +328,26 @@ body{
   }
   100%{
     left:100vw;
+  }
+}
+
+/* iPhone10画面縦での表示*/
+@media screen and (min-width: 800px) {
+  .box{
+    width:80%;
+    margin:12% 10% 0 10%;
+  }
+  #pop{
+    width:74vw;
+    margin:5vh 13vw;
+  }
+  .osusume{
+    margin-left:5vw;
+    margin-top:3vh;
+    margin-bottom:0vh;
+  }
+  .hukidasiBox{
+    width: 44vw;
+    margin-left: 8vw;
   }
 }
