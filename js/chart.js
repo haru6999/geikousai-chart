@@ -1,3 +1,17 @@
+//  メニューバー隠す
+document.addEventListener("load", function() {
+  if (this.webkitRequestFullScreen) {
+    this.webkitRequestFullScreen();
+}
+else if (this. mozRequestFullScreen) {
+   this. mozRequestFullScreen();
+}
+else {
+   alert("not found")
+}
+});
+
+
 jQuery(function($){
 
 var text = $(document.getElementById('text'));
@@ -155,26 +169,26 @@ $("#more2").click(function() {
   q=1;
   text.html("芸工祭に興味がある");
   $("#pop").css({
-    'animation':'popsOut 1s'
+    'animation':'popsOut .5s'
   });
   setTimeout(function(){
     $('#pop').css({
         'display':'none',
         'animation': 'none'
     });
-  },1000);
+  },500);
 });
 
 function popIn(){
   $('#pop').css({
     'display':'inline',
-    'animation':'popsIn 1s'
+    'animation':'popsIn .5s'
   })
   setTimeout(function(){
     $('#pop').css({
         'animation': 'none'
     });
-  },1000);
+  },500);
 }
 
 function popChange(busho){
@@ -206,8 +220,8 @@ function popChange(busho){
 // アニメーション
 function animation(q){
   if(0<q && q<10){
-    $("#serif").attr("src", "image/セリフ１.png");
-    $("#image").attr("src", "image/ぱ１.png");
+    $("#serif").attr("src", "image/serif1.png");
+    $("#image").attr("src", "image/pa1.png");
     $('#serif').css({
       'width':'40%',
       'top':'6px',
@@ -219,8 +233,8 @@ function animation(q){
       'left':'30px'
     })
   }else if(10<=q && q<20){
-    $("#serif").attr("src", "image/セリフ２.png");
-    $("#image").attr("src", "image/じゃ.png");
+    $("#serif").attr("src", "image/serif2.png");
+    $("#image").attr("src", "image/ja.png");
     $('#serif').css({
       'width':'40%',
       'top':'6px',
@@ -232,8 +246,8 @@ function animation(q){
       'left':'40px'
     })
   }else{
-    $("#serif").attr("src", "image/セリフ３.png");
-    $("#image").attr("src", "image/ぱ２.png");
+    $("#serif").attr("src", "image/serif3.png");
+    $("#image").attr("src", "image/pa2.png");
     $('#serif').css({
       'width':'55%',
       'top':'10px',

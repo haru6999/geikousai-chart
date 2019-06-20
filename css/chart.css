@@ -8,45 +8,24 @@
   --subpink:#da7e82;
 }
 
-
-/* sp画面縦での表示*/
-@media screen and (max-width: 499px) {
-  body{
-    background-size:200% auto !important;
-    height: 100% !important;
-  }
-  .sp{
-    width:100%;
-    height:100%;
-    position: relative;
-    background: rgba(255,255,255,0.5);
-  }
-  .sp p{
-    width: 80%;
-    margin-left: 10%;
-    position: relative;
-    text-align: center;
-    top:400px;
-    font-size: 15px;
-    padding: 10px;
-    background-color: #FFF;
-    color:var(--mainnavy);
-  }
-  .sp img{
-    position: absolute;
-    width: 60%;
-    margin-left: 20%;
-    top:150px;
-  }
-  .pc{
-    display:none;
-    transform: rotate(90deg);
-
-  }
-  #pops{
-    display:none;
-  }
+/* font */
+@font-face {
+  font-family: 'Phenomena-Bold';
+  url('../font/Phenomena-Bold.woff');
 }
+@font-face {
+  font-family: 'Phenomena-Regular';
+  url('../font/Phenomena-Regular.woff');
+}
+@font-face {
+  font-family: 'tsukushi';
+  src: url('../font/TsukushiAMaruGothic.ttc') format("truetype");
+}
+
+*{
+  font-family : "tsukushi","sans-serif";
+}
+
 
 /* sp横、pc画面での表示 */
 @media screen and (min-width:480px){
@@ -61,7 +40,7 @@ body{
   margin: 0 auto;
   width:100%;
   height:70%;
-  background-image: url("../image/背景.png");
+  background-image: url("../image/background.png");
   background-size:100% auto;
   transition: all 1s;
 }
@@ -224,7 +203,6 @@ body{
   animation: none;
   font-size: 20px;
   letter-spacing: 5px;
-  font-family: "筑紫A丸ゴシック";
   color:#282828;
 }
 
@@ -244,6 +222,7 @@ body{
   left:0;
   border-radius: 10px;
   animation:none;
+  transform:rotate(-3deg);
 }
 #popImg{
   display:inline;
@@ -270,9 +249,17 @@ body{
   right: 0;
   bottom: 8vh;
   margin: auto;
+  animation:bushomei 1s infinite;
+}
+@keyframes bushomei{
+  0%{transform: rotate(-3deg);}
+  40%{}
+  50%{}
+  60%{}
+  100%{}
 }
 #picture{
-  width:28vw;
+  width:40vw;
   position: absolute;
   right:0px;
   bottom:0px;
@@ -290,10 +277,10 @@ body{
   left:0;
 }
 #kanbuP{
-  width:80%;
+  width:86%;
   position: absolute;
   bottom:0;
-  left:10%;
+  left:7%;
 }
 .more2{
   padding: 0.5em 0.5em;
@@ -314,22 +301,51 @@ body{
   transform: translateY(2px);
   box-shadow:none;
 }
-@keyframes popsIn{
+/* @keyframes popsIn{
   0%{
     left:-100vw;
   }
   100%{
     left:0vw;
   }
+} */
+@keyframes popsIn {
+  from {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  50% {
+    opacity: 1;
+  }
 }
-@keyframes popsOut{
+
+.zoomIn {
+  animation-name: zoomIn;
+}
+/* @keyframes popsOut{
   0%{
     left:0vw;
   }
   100%{
     left:100vw;
   }
+} */
+@keyframes popsOut {
+  from {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  to {
+    opacity: 0;
+  }
 }
+
 
 /* iPhone10画面縦での表示*/
 @media screen and (min-width: 800px) {
@@ -342,7 +358,7 @@ body{
     margin:5vh 13vw;
   }
   .osusume{
-    margin-left:5vw;
+    margin-left:7vw;
     margin-top:3vh;
     margin-bottom:0vh;
   }
@@ -350,4 +366,56 @@ body{
     width: 44vw;
     margin-left: 8vw;
   }
+}
+
+
+
+/* sp画面縦での表示*/
+@media screen and (max-width: 499px) {
+  body{
+    background-size:200% auto !important;
+    height: 100% !important;
+  }
+  .sp{
+    width:100%;
+    height:100%;
+    position: relative;
+    background: rgba(255,255,255,0.5);
+  }
+  .sp p{
+    width: 80%;
+    margin-left: 10%;
+    position: relative;
+    text-align: center;
+    top:400px;
+    font-size: 15px;
+    padding: 10px;
+    background-color: var(--subblue);
+    color:white;
+    border-radius: 10px;
+
+  }
+  .sp img{
+    position: absolute;
+    width: 60%;
+    margin-left: 20%;
+    top:150px;
+  }
+  .pc{
+    display:none;
+    transform:translateX(-100vw) rotate(90deg);
+
+  }
+  #pops{
+    display:none;
+  }
+  html,main{
+    width:100vw;
+    height:100vh;
+  }
+  .pc{
+    width:100vh;
+    height:100vw;
+  }
+
 }
