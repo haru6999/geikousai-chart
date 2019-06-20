@@ -390,8 +390,9 @@ body{
     top:400px;
     font-size: 15px;
     padding: 10px;
-    background-color: var(--subblue);
-    color:white;
+    background-color:rgba(255,255,255,0.8);
+    border:solid 1px var(--subblue);
+    color:var(--subblue);
     border-radius: 10px;
 
   }
