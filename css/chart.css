@@ -11,15 +11,15 @@
 /* font */
 @font-face {
   font-family: 'Phenomena-Bold';
-  url('../font/Phenomena-Bold.woff');
+  src:url('../font/Phenomena-Bold.ttf');
 }
 @font-face {
   font-family: 'Phenomena-Regular';
-  url('../font/Phenomena-Regular.woff');
+  src:url('../font/Phenomena-Regular.ttf');
 }
 @font-face {
   font-family: 'tsukushi';
-  src: url('../font/TsukushiAMaruGothic.ttc') format("truetype");
+  src: url('../font/TsukushiAMaruGothic.ttc');
 }
 
 *{
