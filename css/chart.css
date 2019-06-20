@@ -249,14 +249,23 @@ body{
   right: 0;
   bottom: 8vh;
   margin: auto;
-  animation:bushomei 1s infinite;
+  animation:bushomei 2s infinite;
 }
 @keyframes bushomei{
-  0%{transform: rotate(-3deg);}
-  40%{transform: rotate(-3deg);}
-  50%{transform: rotate(-3deg);}
-  60%{transform: rotate(-3deg);}
-  100%{transform: rotate(-3deg);}
+  0%{transform: rotate(0deg);}
+  36%{transform: rotate(0deg);}
+  37%{transform: rotate(-5deg);}
+  40%{transform: rotate(0deg);}
+  42%{transform: rotate(0deg);}
+  43%{transform: rotate(5deg);}
+  44%{transform: rotate(0deg);}
+  46%{transform: rotate(0deg);}
+  47%{transform: rotate(-5deg);}
+  50%{transform: rotate(0deg);}
+  52%{transform: rotate(0deg);}
+  53%{transform: rotate(5deg);}
+  54%{transform: rotate(0deg);}
+  100%{transform: rotate(0deg);}
 }
 #picture{
   width:40vw;
@@ -265,7 +274,7 @@ body{
   bottom:0px;
 }
 #picture2{
-  width:28vw;
+  width:40vw;
   position: absolute;
   left:0px;
   bottom:0px;
