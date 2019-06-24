@@ -11,19 +11,15 @@
 /* font */
 @font-face {
   font-family: 'Phenomena-Bold';
-  src:url('../font/Phenomena-Bold.ttf');
+  src:url('../fonts/Phenomena-Bold.woff');
 }
 @font-face {
   font-family: 'Phenomena-Regular';
-  src:url('../font/Phenomena-Regular.ttf');
-}
-@font-face {
-  font-family: 'tsukushi';
-  src: url('../font/TsukushiAMaruGothic.ttc');
+  src:url('../fonts/Phenomena-Regular.ttf');
 }
 
 *{
-  font-family : "tsukushi","sans-serif";
+  /* font-family : "tsukushi","sans-serif"; */
 }
 
 
@@ -84,6 +80,7 @@ body{
   width: 100%;
   text-align: center;
   font-size: 12px;
+  font-family : "TsukuARdGothic-Regular",sans-serif;
 }
 .more:active{
   background: white;
@@ -168,6 +165,7 @@ body{
   color: var(--subpink);
   border : solid 1px var(--subpink);
   margin-right: 15px;
+  font-family : "TsukuARdGothic-Regular",sans-serif;
 }
 .buttonYes:active {
   /*ボタンを押したとき*/
@@ -178,6 +176,7 @@ body{
 .buttonNo{
   color: var(--subblue);
   border : solid 1px var(--subblue);
+  font-family : "TsukuARdGothic-Regular",sans-serif;
 }
 .buttonNo:active {
   /*ボタンを押したとき*/
@@ -204,6 +203,7 @@ body{
   font-size: 20px;
   letter-spacing: 5px;
   color:#282828;
+  font-family : "TsukuARdGothic-Regular",sans-serif;
 }
 
 /* 結果画像のポップアップ */
@@ -232,6 +232,13 @@ body{
   margin-top:5vh;
   margin-left:15vw;
   margin-bottom:3vh;
+  /* animation: reflection 2s ease-in-out infinite; */
+}
+@keyframes reflection {
+  0% { transform: scale(0) rotate(45deg); opacity: 0; }
+  80% { transform: scale(0) rotate(45deg); opacity: 0.5; }
+  81% { transform: scale(4) rotate(45deg); opacity: 1; }
+  100% { transform: scale(50) rotate(45deg); opacity: 0; }
 }
 .hukidasiBox{
   width:50vw;
@@ -304,6 +311,7 @@ body{
   left:3vw;
   bottom:3vh;
   box-shadow: 2px 2px var(--mainred);
+  font-family : "TsukuARdGothic-Regular",sans-serif;
 }
 .more2:active{
   transform: translateX(2px);
@@ -324,7 +332,7 @@ body{
     transform: scale3d(0.3, 0.3, 0.3);
   }
 
-  50% {
+  to {
     opacity: 1;
   }
 }
@@ -375,6 +383,12 @@ body{
     width: 44vw;
     margin-left: 8vw;
   }
+  #picture{
+    width:36vw;
+  }
+  #picture2{
+    width:36vw;
+  }
 }
 
 
@@ -394,7 +408,6 @@ body{
   .sp p{
     width: 80%;
     margin-left: 10%;
-    position: relative;
     text-align: center;
     top:400px;
     font-size: 15px;
@@ -403,13 +416,12 @@ body{
     border:solid 1px var(--subblue);
     color:var(--subblue);
     border-radius: 10px;
-
+    font-family : "TsukuARdGothic-Regular",sans-serif;
   }
   .sp img{
-    position: absolute;
     width: 60%;
     margin-left: 20%;
-    top:150px;
+    margin-top:30vh;
   }
   .pc{
     display:none;
